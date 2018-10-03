@@ -1,0 +1,337 @@
+body{
+	font-size: 16px;
+}
+header{
+	.headertop{
+		padding: 20px 0 ;
+		width: 100%;
+	    top: 0;
+	    position: absolute;
+	    z-index: 10;
+	    -webkit-transition: all 0.2s ease-in-out;
+	    -transition: all 0.2s ease-in-out;
+	    -ms-transition: all 0.2s ease-in-out;
+	    -o-transition: all 0.2s ease-in-out;
+	    transition: all 0.2s ease-in-out;
+		&_logo{
+			display: inline-block;
+			img{
+				max-width: 150px;
+				
+			}
+		}
+		&_nav{
+			display: inline-block;
+			vertical-align: middle;
+			width: calc(100% - 155px);
+			&_menu{
+				display: block;
+				list-style-type: none;
+				margin: 0;
+				li{
+					display: inline-block;
+					margin-right: 30px;
+					a{
+						/*font-family: 'Coiny', cursive;*/
+						font-size: 18px;
+						color: black;
+					    text-decoration: none;
+					    font-weight: bold;
+					    -webkit-transition: all 0.2s ease-in-out;
+					    -transition: all 0.2s ease-in-out;
+					    -ms-transition: all 0.2s ease-in-out;
+					    -o-transition: all 0.2s ease-in-out;
+					    transition: all 0.2s ease-in-out;
+					}
+				}
+			}
+			&:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+		}
+	} 
+	.active{
+		padding: 10px 0 ;
+		position: fixed;
+		background: #d1dcbe;
+		.headertop_logo{
+			img{
+				max-width: 120px;
+			}
+		}
+	}
+}
+
+.index_sec01{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	&_video{
+		position: absolute;
+	    right: 0;
+	    bottom: 0;
+	    width: 100%;
+	}
+	&_search{
+		position: absolute;
+		background: white;
+		border: 5px solid #a3d125; 
+		/*background-color: ;*/
+		/*padding: 5px;*/
+		margin: auto;
+		width: 700px;
+		margin: 25% 0 0 50%;
+		transform: translateY(-50%) translateX(-50%);
+	    border-radius: 40px;
+			.input_search{
+				width: calc(100% - 45px);
+				display: inline-block;
+				vertical-align: top;
+				background: none;
+				border: 0px;
+			    border-radius: 40px;
+			    outline: none;
+			    padding-left: 20px;
+			    height: 40px;
+			}
+			.btn_search{
+				display: inline-block;
+			    width: 40px;
+			    height: 40px;
+			    color: black;
+			    border: 0px;
+			    background: none;
+			    outline: none;
+			    font-size: 20px;
+			    -webkit-transition: all 0.2s ease-in-out;
+			    -transition: all 0.2s ease-in-out;
+			    -ms-transition: all 0.2s ease-in-out;
+			    -o-transition: all 0.2s ease-in-out;
+			    transition: all 0.2s ease-in-out;
+			    &:hover{
+			    	color: #a3d125;;
+			    }
+			}
+		
+	}
+}
+.title_page{
+	font-family: 'Coiny', cursive;
+	color: #0b6946;
+}
+.index_sec02{
+	padding-top: 30px;
+	.title_page{
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	&_content{
+		text-align: center;
+	}
+	&_subtitle{
+		text-align: center;
+		color: #0b6946;
+		margin-bottom: 40px;
+	}
+	&_role{
+		.col-lg-4{
+			padding: 20px;
+		}
+		img{
+			max-width: 100px;
+		}
+		p{
+			margin-top: 30px;
+		}
+	}
+}
+.index_sec03{
+	background-image: url(./../imgs/bg.jpg);
+	padding: 30px 0 30px 0;
+	&_form_search{
+		background: white;
+		padding: 20px;
+		border-radius: 20px;
+		width: 900px;
+		margin-left: 50%;
+		transform: translateX(-50%);
+		margin-bottom: 30px;
+		select{
+			width: calc(100%/3 - 4px);
+			display: inline-block;
+			background: white;
+			height: 40px;
+			border: 1px solid gray;
+		}
+		input[type='text']{
+			margin: 10px 0;
+			width: calc(100% - 50px);
+			display: inline-block;
+			height: 40px;
+			border: 1px solid gray;
+		}
+		.btn_search{
+			background: none;
+			border: 0px;
+			font-size: 30px;
+			display: inline-block;
+			outline: none;
+			-webkit-transition: all 0.2s ease-in-out;
+		    -transition: all 0.2s ease-in-out;
+		    -ms-transition: all 0.2s ease-in-out;
+		    -o-transition: all 0.2s ease-in-out;
+		    transition: all 0.2s ease-in-out;
+		    &:hover{
+		    	color: #a3d125;;
+		    }
+		}
+	}
+	&_dish{
+		width: 100%;
+		background: white;
+		border-radius: 20px;
+		padding: 20px;
+		&_item{
+			width: calc(100%/4 - 15px);
+			margin-right: 10px;
+			padding: 10px;
+			margin-bottom: 30px;
+			display: inline-block;
+			&_img{
+				width: 100%;
+				height: 150px;
+				overflow: hidden;
+				margin-bottom: 10px;
+				img{
+					width: 120%;
+					-webkit-transition: all 0.2s ease-in-out;
+				    -transition: all 0.2s ease-in-out;
+				    -ms-transition: all 0.2s ease-in-out;
+				    -o-transition: all 0.2s ease-in-out;
+				    transition: all 0.2s ease-in-out;
+				}
+			}
+			p{
+				color: black;
+				font-weight: bold;
+			}
+			&:hover{
+				.index_sec03_dish_item_img{
+					img{
+						width: 130%;
+						transform: translateY(-5%) translateX(-5%);
+					}
+				}
+				p{
+					color: #0b6946;
+				}
+			}
+		}
+	}
+}
+.index_sec04{
+	padding: 30px 0 0px 0;
+	img{
+		max-width: 50%
+	}
+}
+footer{
+	.copyright{
+		text-align: center;
+	}
+}
+.admin{
+	.tille_page{
+		border-bottom: 1px solid gainsboro;
+		padding-bottom: 10px;
+		h1{
+			width: auto;
+			float: left;
+			margin: auto;
+		}
+		.btn_add{
+			float: right;
+			font-size: 30px;
+			background: none;
+			color: #2079bd;
+		}
+		&:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+	}
+}
+.list_table{
+	margin-top: 20px;
+	table{
+		width: 100%;
+		tr{
+			border-bottom: 1px solid gainsboro;
+			padding: 10px 0;
+			th{
+				padding: 7px;
+				&:first-child{
+					width: 50px;	
+				}
+			}
+			td{
+				padding: 7px;
+				&:last-child{
+					text-align: right;	
+					width: 180px;
+				}
+			}
+		}
+	}
+}
+.btn{
+	display: inline-block;
+	background: gainsboro;
+	padding: 10px;
+	color: black;
+	margin-right: 10px;
+	&_add{
+		background: #2079bd;
+		color: white;
+	}
+	&_delete{
+		background: #DE5D50;
+		color: white;
+	}
+}
+
+.form_table{
+	margin-top: 20px;
+	table{
+		width: 100%;
+		tr{
+			td{
+				padding: 7px;
+				vertical-align: middle;
+				&:first-child{
+					width: 200px;
+				}
+			}
+		}
+	}
+	input[type="text"],input[type="password"],input[type="number"], textarea{
+		width: 100%;
+		height: 40px;
+		outline: none;
+		border: 1px solid gainsboro;
+		box-shadow: none;
+	}
+	textarea{
+		height: 200px;
+		resize: none;
+	}
+	input[type="checkbox"],input[type="radio"]{
+		margin-right: 5px;
+	}
+	label{
+		margin-right: 10px;
+	}
+}
