@@ -1,12 +1,13 @@
 body{
 	font-size: 16px;
 }
+
 header{
 	.headertop{
 		padding: 20px 0 ;
 		width: 100%;
 	    top: 0;
-	    position: absolute;
+	    // position: absolute;
 	    z-index: 10;
 	    -webkit-transition: all 0.2s ease-in-out;
 	    -transition: all 0.2s ease-in-out;
@@ -148,7 +149,7 @@ header{
 	}
 }
 .index_sec03{
-	background-image: url(./../imgs/bg.jpg);
+	// background-image: url(./../imgs/bg.jpg);
 	padding: 30px 0 30px 0;
 	&_form_search{
 		background: white;
@@ -164,6 +165,7 @@ header{
 			background: white;
 			height: 40px;
 			border: 1px solid gray;
+			outline: none;
 		}
 		input[type='text']{
 			margin: 10px 0;
@@ -171,6 +173,7 @@ header{
 			display: inline-block;
 			height: 40px;
 			border: 1px solid gray;
+			outline: none;
 		}
 		.btn_search{
 			background: none;
@@ -217,17 +220,7 @@ header{
 				color: black;
 				font-weight: bold;
 			}
-			&:hover{
-				.index_sec03_dish_item_img{
-					img{
-						width: 130%;
-						transform: translateY(-5%) translateX(-5%);
-					}
-				}
-				p{
-					color: #0b6946;
-				}
-			}
+			
 		}
 	}
 }
@@ -333,5 +326,25 @@ footer{
 	}
 	label{
 		margin-right: 10px;
+	}
+}
+.detail_table{
+	table{
+		width: 100%;
+		th{
+			font-weight: bold;
+		}
+		td{
+			font-weight: normal;
+		}
+		tr{
+			border-bottom: 1px solid gainsboro;
+		}
+	}
+}
+.p_detail{
+	min-height: calc(100vh - 150px);
+	img{
+		max-width: 100%;
 	}
 }

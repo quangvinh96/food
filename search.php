@@ -81,34 +81,7 @@
 		</div>
 	</div>
 </section>
-<section class="index_sec02">
-	<div class="container">
-		<h2 class="title_page">Tầm quan trọng của dinh dưỡng</h2>
-		<p class="index_sec02_content">Chất dinh dưỡng có vai trò vô cùng quan trọng đối với sức khoẻ và sự phát triển của cơ thể. Chế độ ăn đầy đủ dinh dưỡng là bữa ăn có đủ các thành phần dinh dưỡng cả về số lượng và chất lượng. Cùng tìm hiểu dinh dưỡng là gì và những lợi ích mà dinh dưỡng mang đến cho sức khỏe của bạn và gia đình bạn nhé!</p>
-		<p class="index_sec02_subtitle">Dinh dưỡng có ba mục đích chính</p>
-		<div class="row index_sec02_role" align="center">
-			<div class="col-lg-4">
-				<img src="./imgs/icon1.png">
-				<p>Tạo điều kiện thuận lợi để cơ thể có sức khỏe tốt</p>
-			</div>
-			<div class="col-lg-4">
-				<img src="./imgs/icon2.png">
-				<span id="formsearch"></span>
-				<p>Phòng ngừa các bệnh liên quan tới ăn uống</p>
-			</div>
-			<div class="col-lg-4">
-				<img src="./imgs/icon3.png">
-				<p>Khôi phục sức khỏe sau thời kỳ bệnh tật, thương tích</p>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="index_sec04">
-	<div class="container" align="center">
-		<h2 class="title_page">Tháp đồ dinh dưỡng</h2>
-		<img src="./imgs/tf.jpg">
-	</div>
-</section>
+
 <?php
 include('footer.php');
 ?>
