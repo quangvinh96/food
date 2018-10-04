@@ -27,11 +27,11 @@
 					<div class="headertop_nav">
 						<ul class="headertop_nav_menu">
 							<li><a href="./index.php">Món Ăn</a></li>
-							<li><a href="#">NL Thô</a></li>
-							<li><a href="#">Loại</a></li>
-							<li><a href="#">GT Dinh Dương</a></li>
-							<li><a href="#">Vitamin</a></li>
-							<li><a href="#">Nhóm Chất</a></li>
+							<li><a href="./nguyenlieu.php">Nguyên Liệu Thô</a></li>
+							<li><a href="./loai.php">Loại</a></li>
+							<li><a href="./dinhduong.php">GT Dinh Dương</a></li>
+							<li><a href="./vitamin.php">Vitamin</a></li>
+							<li><a href="./nhomchat.php">Nhóm Chất</a></li>
 							<li><a href="#">Khối Lượng</a></li>
 						</ul>
 					</div>
