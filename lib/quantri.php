@@ -1,6 +1,38 @@
 
 
 <?php
+//ds món ăn
+function monan(){
+    $qr = "SELECT * FROM 01_monan ";
+    return mysql_query($qr);
+}
+
+//món ăn theo id
+function monan_id($id){
+    $qr = "SELECT * FROM 01_monan where 01_id_monan = '$id' ";
+    $a = mysql_query($qr);
+    return mysql_fetch_array($a);
+}
+// lấy nguyên liệu theo món ăn
+function nguyenlieu_monan($id){
+    $qr = "SELECT * FROM 04_khoiluong join 01_monan on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu WHERE 01_id_monan ='$id'";
+    return mysql_query($qr);
+}
+
+// lấy nhóm chất theo món ăn
+function nhomchat_monan($id){
+    $qr = "SELECT 05_ten_nhomchat FROM 05_nhomchat JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_nhomchat = 05_nhomchat.05_id_nhomchat JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 07_giatridinhduong.07_id_nguyenlieu JOIN 04_khoiluong ON 04_khoiluong.04_id_nguyenlieu = 07_giatridinhduong.07_id_nguyenlieu JOIN 01_monan on 01_monan.01_id_monan = 04_khoiluong.04_id_monan WHERE 01_id_monan = '$id' GROUP BY 05_id_nhomchat";
+    return mysql_query($qr);
+}
+
+
+// lấy nhóm chất theo món ăn
+function vitamin_monan($id){
+    $qr = "SELECT 06_ten_vitamin FROM 06_vitamin JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_vitamin = 06_vitamin.06_id_vitamin JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 07_giatridinhduong.07_id_nguyenlieu JOIN 04_khoiluong ON 04_khoiluong.04_id_nguyenlieu = 07_giatridinhduong.07_id_nguyenlieu JOIN 01_monan on 01_monan.01_id_monan = 04_khoiluong.04_id_monan WHERE 01_id_monan = '$id' GROUP BY 06_id_vitamin";
+    return mysql_query($qr);
+}
+
+
 //ds loại thực phẩm
 function loai(){
 	$qr = "SELECT * FROM 03_loai ";
@@ -21,6 +53,7 @@ function loai_id($id){
 }
 //ds nhóm chất
 function nhomchat(){
+
     $qr = "SELECT * FROM 05_nhomchat ";
     return mysql_query($qr);
 }
