@@ -54,4 +54,28 @@ function nguyenlieu_id($id){
     $a = mysql_query($qr);
     return mysql_fetch_array($a);
 }
+//lấy tên nguyên liệu theo bảng  nhóm chât
+ function nguyenlieu_nhomchat(){
+    $qr = "SELECT * FROM 02_nguyenlieutho left join 07_giatridinhduong on 02_nguyenlieutho.02_id_nguyenlieu = 07_giatridinhduong.07_id_nguyenlieu left join 05_nhomchat on  07_giatridinhduong.07_id_nhomchat = 05_nhomchat.05_id_nhomchat where 07_id_nhomchat <> 'NULL' order by 02_id_nguyenlieu desc";
+    return mysql_query($qr);
+}
+
+//lấy tên nguyên liệu theo bảng vitamin
+function nguyenlieu_vitamin(){
+    $qr = "SELECT * FROM 02_nguyenlieutho left join 07_giatridinhduong on 02_nguyenlieutho.02_id_nguyenlieu = 07_giatridinhduong.07_id_nguyenlieu left join 06_vitamin on  07_giatridinhduong.07_id_vitamin = 06_vitamin.06_id_vitamin where 07_id_vitamin <> 'NULL' order by 02_id_nguyenlieu desc";
+    return mysql_query($qr);
+}
+
+//kiểm tra tồn tại nguyên liệu theo nhóm chất
+function check_nhomchat($nguyenlieu,$nhomchat){
+    $qr = "SELECT COUNT(07_id_giatri) FROM 07_giatridinhduong WHERE 07_id_nguyenlieu ='$nguyenlieu' and 07_id_nhomchat = '$nhomchat'";
+    $a = mysql_query($qr);
+    return mysql_fetch_array($a);
+}
+//kiểm tra tồn tại nguyên liệu theo vitamin
+function check_vitamin($nguyenlieu,$vitamin){
+    $qr = "SELECT COUNT(07_id_giatri) FROM 07_giatridinhduong WHERE 07_id_nguyenlieu ='$nguyenlieu' and 07_id_vitamin = '$vitamin'";
+    $a = mysql_query($qr);
+    return mysql_fetch_array($a);
+}
 ?>

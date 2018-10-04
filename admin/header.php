@@ -32,7 +32,7 @@
 							<li><a href="./dinhduong.php">GT Dinh Dương</a></li>
 							<li><a href="./vitamin.php">Vitamin</a></li>
 							<li><a href="./nhomchat.php">Nhóm Chất</a></li>
-							<li><a href="#">Khối Lượng</a></li>
+							<li><a href="./khoiluong.php">Khối Lượng</a></li>
 						</ul>
 					</div>
 				</div>
