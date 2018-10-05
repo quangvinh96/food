@@ -25,7 +25,7 @@
 		<header >
 			<div class="headertop" style="position: unset;">
 				<div class="container">
-					<a href="#" class="headertop_logo"><img src="<?=$url?>imgs/logo.png"></a>
+					<a href="index.php" class="headertop_logo"><img src="<?=$url?>imgs/logo.png"></a>
 					<div class="headertop_nav">
 						<ul class="headertop_nav_menu">
 							<li><a href="./index.php">Món Ăn</a></li>
