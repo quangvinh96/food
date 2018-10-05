@@ -41,7 +41,7 @@ td, th {
 		    <td><?php echo $i++;?></td>
 		    <td><?=$row_ds_vitamin['06_ten_vitamin'] ?></td>
 		    <td><a href="edit_vitamin.php?id=<?=$row_ds_vitamin['06_id_vitamin'] ?>">Sửa</a></td>
-		    <td><a onclick="return confirm('bạn có chắc muốn xóa ?');" href="delete_vitamin.php?id=<?=$row_ds_vitamin['06_id_vitamin'] ?>">Xóa</a></td>
+		    <td style="text-align: left;"><a onclick="return confirm('bạn có chắc muốn xóa ?');" href="delete_vitamin.php?id=<?=$row_ds_vitamin['06_id_vitamin'] ?>">Xóa</a></td>
 		  </tr>
 		 <?php } ?>
 		 

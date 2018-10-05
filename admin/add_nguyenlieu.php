@@ -30,7 +30,7 @@
 					$vi = $_POST['vi'];
 					$congdung = $_POST['congdung'];
 					
-					 mysql_query("INSERT INTO `02_nguyenlieutho`( `02_ten_nguyenlieu`, `02_id_loai`, `02_mau`, `02_vi`, `02_congdung`, `02_kcal_1gam`) VALUES ('$tennguyenlieu','$id_loai','$kcal','$mau','$vi','$congdung')");
+					 mysql_query("INSERT INTO `02_nguyenlieutho`( `02_ten_nguyenlieu`, `02_id_loai`, `02_mau`, `02_vi`, `02_congdung`, `02_kcal_1gam`) VALUES ('$tennguyenlieu','$id_loai','$mau','$vi','$congdung','$kcal')");
 					echo "<script>alert('Thêm thành công')</script>";
 				}
 				?>

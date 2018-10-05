@@ -20,7 +20,7 @@
 			<table>
 				<tr>
 					<td>Tên loại: &nbsp </td>
-					<td><input type="text" name="tenloai" required></td>
+					<td><input type="text" name="tenloai" required ></td>
 				</tr>
 
 				<tr>

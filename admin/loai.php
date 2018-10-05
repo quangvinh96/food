@@ -41,7 +41,7 @@ td, th {
 		    <td><?php echo $i++;?></td>
 		    <td><?=$row_ds_loai['03_ten_loai'] ?></td>
 		    <td><a href="edit_loai.php?id=<?=$row_ds_loai['03_id_loai'] ?>">Sửa</a></td>
-		    <td><a onclick="return confirm('bạn có chắc muốn xóa ?');" href="delete_loai.php?id=<?=$row_ds_loai['03_id_loai'] ?>">Xóa</a></td>
+		    <td style="text-align: left;"><a onclick="return confirm('bạn có chắc muốn xóa ?');" href="delete_loai.php?id=<?=$row_ds_loai['03_id_loai'] ?>">Xóa</a></td>
 		  </tr>
 		 <?php } ?>
 		 

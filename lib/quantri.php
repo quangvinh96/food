@@ -1,6 +1,38 @@
 
 
 <?php
+//ds món ăn
+function monan(){
+    $qr = "SELECT * FROM 01_monan ";
+    return mysql_query($qr);
+}
+
+//món ăn theo id
+function monan_id($id){
+    $qr = "SELECT * FROM 01_monan where 01_id_monan = '$id' ";
+    $a = mysql_query($qr);
+    return mysql_fetch_array($a);
+}
+// lấy nguyên liệu theo món ăn
+function nguyenlieu_monan($id){
+    $qr = "SELECT * FROM 04_khoiluong join 01_monan on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu WHERE 01_id_monan ='$id'";
+    return mysql_query($qr);
+}
+
+// lấy nhóm chất theo món ăn
+function nhomchat_monan($id){
+    $qr = "SELECT 05_ten_nhomchat FROM 05_nhomchat JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_nhomchat = 05_nhomchat.05_id_nhomchat JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 07_giatridinhduong.07_id_nguyenlieu JOIN 04_khoiluong ON 04_khoiluong.04_id_nguyenlieu = 07_giatridinhduong.07_id_nguyenlieu JOIN 01_monan on 01_monan.01_id_monan = 04_khoiluong.04_id_monan WHERE 01_id_monan = '$id' GROUP BY 05_id_nhomchat";
+    return mysql_query($qr);
+}
+
+
+// lấy nhóm chất theo món ăn
+function vitamin_monan($id){
+    $qr = "SELECT 06_ten_vitamin FROM 06_vitamin JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_vitamin = 06_vitamin.06_id_vitamin JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 07_giatridinhduong.07_id_nguyenlieu JOIN 04_khoiluong ON 04_khoiluong.04_id_nguyenlieu = 07_giatridinhduong.07_id_nguyenlieu JOIN 01_monan on 01_monan.01_id_monan = 04_khoiluong.04_id_monan WHERE 01_id_monan = '$id' GROUP BY 06_id_vitamin";
+    return mysql_query($qr);
+}
+
+
 //ds loại thực phẩm
 function loai(){
 	$qr = "SELECT * FROM 03_loai ";
@@ -21,6 +53,7 @@ function loai_id($id){
 }
 //ds nhóm chất
 function nhomchat(){
+
     $qr = "SELECT * FROM 05_nhomchat ";
     return mysql_query($qr);
 }
@@ -54,4 +87,48 @@ function nguyenlieu_id($id){
     $a = mysql_query($qr);
     return mysql_fetch_array($a);
 }
+//lấy tên nguyên liệu theo bảng  nhóm chât
+ function nguyenlieu_nhomchat(){
+    $qr = "SELECT * FROM 02_nguyenlieutho left join 07_giatridinhduong on 02_nguyenlieutho.02_id_nguyenlieu = 07_giatridinhduong.07_id_nguyenlieu left join 05_nhomchat on  07_giatridinhduong.07_id_nhomchat = 05_nhomchat.05_id_nhomchat where 07_id_nhomchat <> 'NULL' order by 02_id_nguyenlieu desc";
+    return mysql_query($qr);
+}
+
+//lấy tên nguyên liệu theo bảng vitamin
+function nguyenlieu_vitamin(){
+    $qr = "SELECT * FROM 02_nguyenlieutho left join 07_giatridinhduong on 02_nguyenlieutho.02_id_nguyenlieu = 07_giatridinhduong.07_id_nguyenlieu left join 06_vitamin on  07_giatridinhduong.07_id_vitamin = 06_vitamin.06_id_vitamin where 07_id_vitamin <> 'NULL' order by 02_id_nguyenlieu desc";
+    return mysql_query($qr);
+}
+
+//kiểm tra tồn tại nguyên liệu theo nhóm chất
+function check_nhomchat($nguyenlieu,$nhomchat){
+    $qr = "SELECT COUNT(07_id_giatri) FROM 07_giatridinhduong WHERE 07_id_nguyenlieu ='$nguyenlieu' and 07_id_nhomchat = '$nhomchat'";
+    $a = mysql_query($qr);
+    return mysql_fetch_array($a);
+}
+//kiểm tra tồn tại nguyên liệu theo vitamin
+function check_vitamin($nguyenlieu,$vitamin){
+    $qr = "SELECT COUNT(07_id_giatri) FROM 07_giatridinhduong WHERE 07_id_nguyenlieu ='$nguyenlieu' and 07_id_vitamin = '$vitamin'";
+    $a = mysql_query($qr);
+    return mysql_fetch_array($a);
+}
+//lấy id max bảng món ăn
+function max_id_food(){
+    $qr = "SELECT MAX(01_id_monan) FROM 01_monan";
+    $a = mysql_query($qr);
+    return mysql_fetch_array($a);
+}
+
+//kiểm tra nguyên liệu đã tồn tại trong món ăn
+function count_nguyenlieu_monan($id,$id_nguyenlieu){
+    $qr="SELECT COUNT(04_id_khoiluong) FROM 04_khoiluong WHERE 04_id_monan = '$id' and 04_id_nguyenlieu = '$id_nguyenlieu' ";
+    $a = mysql_query($qr);
+    return mysql_fetch_array($a);
+}
+// lấy tên ảnh của món ăn
+function name_hinh($id){
+    $qr="SELECT 01_hinh FROM 01_monan WHERE 01_id_monan = '$id'  ";
+    $a = mysql_query($qr);
+    return mysql_fetch_array($a);
+}
+
 ?>

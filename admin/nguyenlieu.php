@@ -52,7 +52,7 @@ td, th {
 		    <td><?=$row_ds_nguyenlieu['02_congdung'] ?></td>
 
 		    <td><a href="edit_nguyenlieu.php?id=<?=$row_ds_nguyenlieu['02_id_nguyenlieu'] ?>">Sửa</a></td>
-		    <td><a onclick="return confirm('bạn có chắc muốn xóa ?');" href="delete_nguyenlieu.php?id=<?=$row_ds_nguyenlieu['02_id_nguyenlieu'] ?>">Xóa</a></td>
+		    <td style="text-align: left;"><a onclick="return confirm('bạn có chắc muốn xóa ?');" href="delete_nguyenlieu.php?id=<?=$row_ds_nguyenlieu['02_id_nguyenlieu'] ?>">Xóa</a></td>
 		  </tr>
 		 <?php } ?>
 		 
