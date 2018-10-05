@@ -1,3 +1,4 @@
+
 <?php
 	include('./header.php');
 	include('../lib/dbCon.php');
@@ -43,7 +44,7 @@ td, th {
 		    <td><img style ="max-width: 150px;max-height: 100px;" src="../imgs/uploads/<?=$row_ds_monan['01_hinh'] ?>" /></td>
 		    <td><?=$row_ds_monan['01_ten_monan'] ?></td>
 		    <td><a href="monan.php?id=<?=$row_ds_monan['01_id_monan'] ?>">Xem</a></td>
-		    <td style="text-align: left;"><a onclick="return confirm('bạn có chắc muốn xóa ?');" href="delete_monan.php?id=<?=$row_ds_monan['01_id_monan'] ?>">Xóa</a></td>
+		    <td style="text-align: left;"><a onclick="return confirm('bạn có chắc muốn xóa ?');" href="delete_monan.php?id=<?=$row_ds_monan['01_id_monan']?>">Xóa</a></td>
 		    
 		  </tr>
 		 <?php } ?>
@@ -52,3 +53,12 @@ td, th {
 		</div>
 	</div>
 </section>
+<!-- kt lỗi ảnh -->
+
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ 
+<script>
+$("img").error(function(){
+    $(this).attr("src","../imgs/chuaco.png")
+	});
+</script> 

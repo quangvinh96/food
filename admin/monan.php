@@ -27,9 +27,10 @@ $monan = monan_id($id);
 		
 		<div><center><img style="max-width: 500px; max-height: 300px" src="../imgs/uploads/<?=$monan['01_hinh'] ?>" ></center><div>
 		<div><center><h3><?=$monan['01_ten_monan'] ?></h3></center></div>
-
+		<div><a href="add_nguyenlieu_monan.php?id=<?=$id?>"><input type="button" value="Sửa"></a></div>
 		<br><br>
-		<div>Nguyên liệu:</div>
+
+		<div>Nguyên liệu:</div>  
 		<?php 
 		$nguyenlieu_monan = nguyenlieu_monan($id);
 		$tong = array();
@@ -38,7 +39,7 @@ $monan = monan_id($id);
 		array_push($tong, $row_NL_MN['04_khoiluong']*$row_NL_MN['02_kcal_1gam']);
 		
 		 ?>
-		 <div><?php echo "+ ".$row_NL_MN['02_ten_nguyenlieu'].": ".$row_NL_MN['04_khoiluong']."g, "."Kcal cung cấp ".$row_NL_MN['04_khoiluong']*$row_NL_MN['02_kcal_1gam']."kcal." ?></div>
+		 <div><?php echo "+ ".$row_NL_MN['02_ten_nguyenlieu'].": ".$row_NL_MN['04_khoiluong']."g, "."Kcal cung cấp: ".$row_NL_MN['04_khoiluong']*$row_NL_MN['02_kcal_1gam']." kcal." ?></div>
 
 		<?php } ?>
 
@@ -66,3 +67,11 @@ $monan = monan_id($id);
 		
 	</div>
 </section>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ 
+<script>
+$("img").error(function(){
+    $(this).attr("src","../imgs/chuaco.png")
+	});
+</script> 

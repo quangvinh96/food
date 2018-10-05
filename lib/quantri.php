@@ -111,4 +111,24 @@ function check_vitamin($nguyenlieu,$vitamin){
     $a = mysql_query($qr);
     return mysql_fetch_array($a);
 }
+//lấy id max bảng món ăn
+function max_id_food(){
+    $qr = "SELECT MAX(01_id_monan) FROM 01_monan";
+    $a = mysql_query($qr);
+    return mysql_fetch_array($a);
+}
+
+//kiểm tra nguyên liệu đã tồn tại trong món ăn
+function count_nguyenlieu_monan($id,$id_nguyenlieu){
+    $qr="SELECT COUNT(04_id_khoiluong) FROM 04_khoiluong WHERE 04_id_monan = '$id' and 04_id_nguyenlieu = '$id_nguyenlieu' ";
+    $a = mysql_query($qr);
+    return mysql_fetch_array($a);
+}
+// lấy tên ảnh của món ăn
+function name_hinh($id){
+    $qr="SELECT 01_hinh FROM 01_monan WHERE 01_id_monan = '$id'  ";
+    $a = mysql_query($qr);
+    return mysql_fetch_array($a);
+}
+
 ?>

@@ -17,6 +17,8 @@
 		<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="<?=$url?>js/bootstrap.min.js"></script>
+
+		
 		
 	</head>
 	<body>
@@ -32,7 +34,6 @@
 							<li><a href="./dinhduong.php">GT Dinh Dương</a></li>
 							<li><a href="./vitamin.php">Vitamin</a></li>
 							<li><a href="./nhomchat.php">Nhóm Chất</a></li>
-							<li><a href="./khoiluong.php">Khối Lượng</a></li>
 						</ul>
 					</div>
 				</div>
