@@ -124,11 +124,18 @@ function count_nguyenlieu_monan($id,$id_nguyenlieu){
     $a = mysql_query($qr);
     return mysql_fetch_array($a);
 }
-// lấy tên ảnh của món ăn
+// lấy tên ảnh của món ăn 
 function name_hinh($id){
     $qr="SELECT 01_hinh FROM 01_monan WHERE 01_id_monan = '$id'  ";
     $a = mysql_query($qr);
     return mysql_fetch_array($a);
 }
+// ------------------------index user ------------------
+// lấy 8 sp ngẫu nhiên
+function random_monan(){
+    $qr="SELECT * FROM 01_monan ORDER BY RAND() LIMIT 8  ";
+    return mysql_query($qr);
+}
+
 
 ?>

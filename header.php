@@ -27,8 +27,8 @@
 					<a href="#" class="headertop_logo"><img src="./imgs/logo.png"></a>
 					<div class="headertop_nav">
 						<ul class="headertop_nav_menu">
-							<li><a href="#">Home</a></li>
-							<li><a href="#formsearch">Search</a></li>
+							<li><a href="index.php">Home</a></li>
+							<li><a href="search.php">Search</a></li>
 							<li><a href="#">About</a></li>
 						</ul>
 					</div>
