@@ -17,11 +17,22 @@ include('lib/dbCon.php');
 		<button class="btn_search"><i class="fa fa-search" aria-hidden="true"></i></button>
 	</div>
 </section> -->
+<?php if(isset($_GET['loai'])){
+		$s_loai = $_GET['loai'];
+		$s_nhomchat = $_GET['nhomchat'];
+		$s_vitamin = $_GET['vitamin'];
+		$s_monan = $_GET['monan'];
+		if(){}
+		} ?>
+
 
 <section class="index_sec03" >
 	<div class="container">
+		<form action="search.php" method="get">
+			
+		
 		<div class="index_sec03_form_search">
-			<select nam="loai">
+			<select name="loai">
 				<option value="">Chọn loại</option>
 				<?php 
 				$loai = loai();
@@ -32,6 +43,7 @@ include('lib/dbCon.php');
 				<option value="<?=$row_loai['03_id_loai']?>"><?=$row_loai['03_ten_loai']?></option>
 				<?php } ?>
 			</select>
+
 			<select name="nhomchat">
 				<option value="">Nhóm chất</option>
 				<?php 
@@ -42,6 +54,7 @@ include('lib/dbCon.php');
 				<option value="<?=$row_nhomchat['05_id_nhomchat']?>"><?=$row_nhomchat['05_ten_nhomchat']?></option>
 				<?php } ?>
 			</select>
+
 			<select name="vitamin">
 				<option value="">Vitamin</option>
 				<?php 
@@ -54,8 +67,12 @@ include('lib/dbCon.php');
 
 			</select>
 			<input type="text" name="monan" placeholder="Tên món ăn">
-			<button class="btn_search"><i class="fa fa-search" aria-hidden="true"></i></button>
+
+			<button  class="btn_search"><i class="fa fa-search" aria-hidden="true"></i></button>
 		</div>
+
+		</form>
+
 		<div class="index_sec03_dish">
 			<?php 
 			$monan_8 = random_monan();

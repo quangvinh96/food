@@ -136,6 +136,8 @@ function random_monan(){
     $qr="SELECT * FROM 01_monan ORDER BY RAND() LIMIT 8  ";
     return mysql_query($qr);
 }
+//----------------------search-------------------------------
+
 
 
 ?>
