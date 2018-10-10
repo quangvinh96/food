@@ -143,4 +143,70 @@ function full_if($s_loai,$s_nhomchat,$s_vitamin,$s_monan){
     return mysql_query($qr);
 }
 
+function full_if1($s_loai){
+    $qr="SELECT * FROM 01_monan JOIN 04_khoiluong on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu JOIN 03_loai on 03_loai.03_id_loai = 02_nguyenlieutho.02_id_loai  WHERE  03_id_loai = '$s_loai'  GROUP BY 01_id_monan";
+    return mysql_query($qr);
+}
+
+function full_if2($s_nhomchat){
+    $qr="SELECT * FROM 01_monan JOIN 04_khoiluong on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_nguyenlieu = 02_nguyenlieutho.02_id_nguyenlieu JOIN 03_loai on 03_loai.03_id_loai = 02_nguyenlieutho.02_id_loai WHERE  07_id_nhomchat = '$s_nhomchat'  GROUP BY 01_id_monan";
+    return mysql_query($qr);
+}
+
+function full_if3($s_vitamin){
+    $qr="SELECT * FROM 01_monan JOIN 04_khoiluong on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_nguyenlieu = 02_nguyenlieutho.02_id_nguyenlieu JOIN 03_loai on 03_loai.03_id_loai = 02_nguyenlieutho.02_id_loai  WHERE 07_id_vitamin = '$s_vitamin'  GROUP BY 01_id_monan";
+    return mysql_query($qr);
+}
+
+function full_if4($s_monan){
+    $qr="SELECT * FROM 01_monan   WHERE 01_ten_monan LIKE '%$s_monan%' ";
+    return mysql_query($qr);
+}
+function full_if5($s_loai,$s_nhomchat){
+    $qr="SELECT * FROM 01_monan JOIN 04_khoiluong on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_nguyenlieu = 02_nguyenlieutho.02_id_nguyenlieu JOIN 03_loai on 03_loai.03_id_loai = 02_nguyenlieutho.02_id_loai  WHERE  07_id_nhomchat = '$s_nhomchat' and 03_id_loai = '$s_loai'  GROUP BY 01_id_monan";
+    return mysql_query($qr);
+}
+
+function full_if6($s_loai,$s_vitamin){
+    $qr="SELECT * FROM 01_monan JOIN 04_khoiluong on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_nguyenlieu = 02_nguyenlieutho.02_id_nguyenlieu JOIN 03_loai on 03_loai.03_id_loai = 02_nguyenlieutho.02_id_loai  WHERE 07_id_vitamin = '$s_vitamin'  and 03_id_loai = '$s_loai'  GROUP BY 01_id_monan";
+    return mysql_query($qr);
+}
+
+function full_if7($s_loai,$s_monan){
+    $qr="SELECT * FROM 01_monan JOIN 04_khoiluong on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu left JOIN 03_loai on 03_loai.03_id_loai = 02_nguyenlieutho.02_id_loai  WHERE  03_id_loai = '$s_loai' and 01_ten_monan LIKE '%$s_monan%' GROUP BY 01_id_monan";
+    return mysql_query($qr);
+}
+
+function full_if8($s_nhomchat,$s_vitamin){
+    $qr="SELECT * FROM 01_monan JOIN 04_khoiluong on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_nguyenlieu = 02_nguyenlieutho.02_id_nguyenlieu JOIN 03_loai on 03_loai.03_id_loai = 02_nguyenlieutho.02_id_loai  WHERE 07_id_vitamin = '$s_vitamin' or 07_id_nhomchat = '$s_nhomchat'  GROUP BY 01_id_monan";
+    return mysql_query($qr);
+}
+
+function full_if9($s_nhomchat,$s_monan){
+    $qr="SELECT * FROM 01_monan JOIN 04_khoiluong on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_nguyenlieu = 02_nguyenlieutho.02_id_nguyenlieu JOIN 03_loai on 03_loai.03_id_loai = 02_nguyenlieutho.02_id_loai  WHERE  07_id_nhomchat = '$s_nhomchat'  and 01_ten_monan LIKE '%$s_monan%' GROUP BY 01_id_monan";
+    return mysql_query($qr);
+}
+
+function full_if10($s_vitamin,$s_monan){
+    $qr="SELECT * FROM 01_monan JOIN 04_khoiluong on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_nguyenlieu = 02_nguyenlieutho.02_id_nguyenlieu JOIN 03_loai on 03_loai.03_id_loai = 02_nguyenlieutho.02_id_loai  WHERE 07_id_vitamin = '$s_vitamin' and 01_ten_monan LIKE '%$s_monan%' GROUP BY 01_id_monan";
+    return mysql_query($qr);
+}
+function full_if11($s_nhomchat,$s_vitamin,$s_monan){
+    $qr="SELECT * FROM 01_monan JOIN 04_khoiluong on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_nguyenlieu = 02_nguyenlieutho.02_id_nguyenlieu JOIN 03_loai on 03_loai.03_id_loai = 02_nguyenlieutho.02_id_loai  WHERE 07_id_vitamin = '$s_vitamin' or 07_id_nhomchat = '$s_nhomchat'  and 01_ten_monan LIKE '%$s_monan%' GROUP BY 01_id_monan";
+    return mysql_query($qr);
+}
+
+function full_if12($s_loai,$s_vitamin,$s_monan){
+    $qr="SELECT * FROM 01_monan JOIN 04_khoiluong on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_nguyenlieu = 02_nguyenlieutho.02_id_nguyenlieu JOIN 03_loai on 03_loai.03_id_loai = 02_nguyenlieutho.02_id_loai  WHERE 07_id_vitamin = '$s_vitamin'  and 03_id_loai = '$s_loai' and 01_ten_monan LIKE '%$s_monan%' GROUP BY 01_id_monan";
+    return mysql_query($qr);
+}
+function full_if13($s_loai,$s_nhomchat,$s_monan){
+    $qr="SELECT * FROM 01_monan JOIN 04_khoiluong on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_nguyenlieu = 02_nguyenlieutho.02_id_nguyenlieu JOIN 03_loai on 03_loai.03_id_loai = 02_nguyenlieutho.02_id_loai  WHERE  07_id_nhomchat = '$s_nhomchat' and 03_id_loai = '$s_loai' and 01_ten_monan LIKE '%$s_monan%' GROUP BY 01_id_monan";
+    return mysql_query($qr);
+}
+function full_if14($s_loai,$s_nhomchat,$s_vitamin){
+    $qr="SELECT * FROM 01_monan JOIN 04_khoiluong on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_nguyenlieu = 02_nguyenlieutho.02_id_nguyenlieu JOIN 03_loai on 03_loai.03_id_loai = 02_nguyenlieutho.02_id_loai  WHERE 07_id_vitamin = '$s_vitamin' or 07_id_nhomchat = '$s_nhomchat' and 03_id_loai = '$s_loai'  GROUP BY 01_id_monan";
+    return mysql_query($qr);
+}
+
 ?>

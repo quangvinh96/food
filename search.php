@@ -23,7 +23,63 @@ include('lib/dbCon.php');
 		$s_vitamin = $_GET['vitamin'];
 		$s_monan = $_GET['monan'];
 
-		$value_search = full_if($s_loai,$s_nhomchat,$s_vitamin,$s_monan);
+		if($s_loai!=''&&$s_nhomchat==''&&$s_vitamin==''&&$s_monan==''){
+			$value_search = full_if1($s_loai);
+		}
+
+		elseif($s_loai==''&&$s_nhomchat!=''&&$s_vitamin==''&&$s_monan==''){
+			$value_search = full_if2($s_nhomchat);
+		}
+
+		elseif($s_loai==''&&$s_nhomchat==''&&$s_vitamin!=''&&$s_monan==''){
+			$value_search = full_if3($s_vitamin);
+		}
+
+		elseif($s_loai==''&&$s_nhomchat==''&&$s_vitamin==''&&$s_monan!=''){
+			$value_search = full_if4($s_monan);
+		}
+
+		elseif($s_loai!=''&&$s_nhomchat!=''&&$s_vitamin==''&&$s_monan==''){
+			$value_search = full_if5($s_loai,$s_nhomchat);
+		}
+
+		elseif($s_loai!=''&&$s_nhomchat==''&&$s_vitamin!=''&&$s_monan==''){
+			$value_search = full_if6($s_loai,$s_vitamin);
+		}
+
+		elseif($s_loai!=''&&$s_nhomchat==''&&$s_vitamin==''&&$s_monan!=''){
+			$value_search = full_if7($s_loai,$s_monan);
+		}
+		elseif ($s_loai==''&&$s_nhomchat!=''&&$s_vitamin!=''&&$s_monan=='') {
+			$value_search = full_if8($s_nhomchat,$s_vitamin);
+		}
+		elseif ($s_loai==''&&$s_nhomchat!=''&&$s_vitamin==''&&$s_monan!='') {
+			$value_search = full_if9($s_nhomchat,$s_monan);
+		}
+		elseif ($s_loai==''&&$s_nhomchat==''&&$s_vitamin!=''&&$s_monan!='') {
+			$value_search = full_if10($s_vitamin,$s_monan);
+		}
+		elseif ($s_loai==''&&$s_nhomchat!=''&&$s_vitamin!=''&&$s_monan!=''){
+			$value_search = full_if11($s_nhomchat,$s_vitamin,$s_monan);
+		}
+		elseif ($s_loai!=''&&$s_nhomchat==''&&$s_vitamin!=''&&$s_monan!=''){
+			$value_search = full_if12($s_loai,$s_vitamin,$s_monan);
+		}
+		elseif ($s_loai!=''&&$s_nhomchat!=''&&$s_vitamin==''&&$s_monan!=''){
+			$value_search = full_if13($s_loai,$s_nhomchat,$s_monan);
+		}
+		elseif ($s_loai!=''&&$s_nhomchat!=''&&$s_vitamin!=''&&$s_monan==''){
+			$value_search = full_if14($s_loai,$s_nhomchat,$s_vitamin);
+		}
+		elseif ($s_loai==''&&$s_nhomchat==''&&$s_vitamin==''&&$s_monan==''){
+			$value_search = random_monan();
+		}
+
+		else{
+			$value_search = full_if($s_loai,$s_nhomchat,$s_vitamin,$s_monan);
+		}
+
+		
 		//if(){}
 		} ?>
 
