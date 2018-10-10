@@ -137,7 +137,10 @@ function random_monan(){
     return mysql_query($qr);
 }
 //----------------------search-------------------------------
-
-
+// lấy đủ điều kiện
+function full_if($s_loai,$s_nhomchat,$s_vitamin,$s_monan){
+    $qr="SELECT * FROM 01_monan JOIN 04_khoiluong on 01_monan.01_id_monan = 04_khoiluong.04_id_monan JOIN 02_nguyenlieutho on 02_nguyenlieutho.02_id_nguyenlieu = 04_khoiluong.04_id_nguyenlieu JOIN 07_giatridinhduong on 07_giatridinhduong.07_id_nguyenlieu = 02_nguyenlieutho.02_id_nguyenlieu JOIN 03_loai on 03_loai.03_id_loai = 02_nguyenlieutho.02_id_loai  WHERE 07_id_vitamin = '$s_vitamin' or 07_id_nhomchat = '$s_nhomchat' and 03_id_loai = '$s_loai' and 01_ten_monan LIKE '%$s_monan%' GROUP BY 01_id_monan";
+    return mysql_query($qr);
+}
 
 ?>

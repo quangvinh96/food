@@ -22,15 +22,15 @@ include('lib/dbCon.php');
 		$s_nhomchat = $_GET['nhomchat'];
 		$s_vitamin = $_GET['vitamin'];
 		$s_monan = $_GET['monan'];
-		if(){}
+
+		$value_search = full_if($s_loai,$s_nhomchat,$s_vitamin,$s_monan);
+		//if(){}
 		} ?>
 
 
 <section class="index_sec03" >
 	<div class="container">
-		<form action="search.php" method="get">
-			
-		
+		<form action="search.php" method="get">	
 		<div class="index_sec03_form_search">
 			<select name="loai">
 				<option value="">Chọn loại</option>
@@ -72,7 +72,27 @@ include('lib/dbCon.php');
 		</div>
 
 		</form>
+		<?php if(isset($_GET['loai'])){ ?>
 
+			<div class="index_sec03_dish">
+			<?php 
+			while ($r_8_monan = mysql_fetch_array($value_search)){
+			 ?>
+
+			<div class="index_sec03_dish_item">
+				<a href="detail.php?id=<?=$r_8_monan['01_id_monan']?>"><div class="index_sec03_dish_item_img">
+					<img src="./imgs/uploads/<?=$r_8_monan['01_hinh'] ?>">
+				</div>
+				<p><?=$r_8_monan['01_ten_monan']; ?> </p>
+			</a>
+			</div>
+			
+			<?php }  ?>
+		</div>
+
+		<?php } ?>
+		<!-- ///////////////////////////////// -->
+		<?php if(!isset($_GET['loai'])){ ?>
 		<div class="index_sec03_dish">
 			<?php 
 			$monan_8 = random_monan();
@@ -89,6 +109,8 @@ include('lib/dbCon.php');
 			
 			<?php }  ?>
 		</div>
+		<?php }  ?>
+
 	</div>
 </section>
 

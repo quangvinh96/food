@@ -22,7 +22,9 @@ include('lib/dbCon.php');
 <section class="index_sec03" >
 	<div class="container">
 		<div class="index_sec03_form_search">
-			<select nam="loai">
+			<form action="search.php" method="get">	
+		<div class="index_sec03_form_search">
+			<select name="loai">
 				<option value="">Chọn loại</option>
 				<?php 
 				$loai = loai();
@@ -33,6 +35,7 @@ include('lib/dbCon.php');
 				<option value="<?=$row_loai['03_id_loai']?>"><?=$row_loai['03_ten_loai']?></option>
 				<?php } ?>
 			</select>
+
 			<select name="nhomchat">
 				<option value="">Nhóm chất</option>
 				<?php 
@@ -43,6 +46,7 @@ include('lib/dbCon.php');
 				<option value="<?=$row_nhomchat['05_id_nhomchat']?>"><?=$row_nhomchat['05_ten_nhomchat']?></option>
 				<?php } ?>
 			</select>
+
 			<select name="vitamin">
 				<option value="">Vitamin</option>
 				<?php 
@@ -54,8 +58,12 @@ include('lib/dbCon.php');
 				<?php } ?>
 
 			</select>
-			<input type="text" name="" placeholder="Tên món ăn">
-			<button class="btn_search"><i class="fa fa-search" aria-hidden="true"></i></button>
+			<input type="text" name="monan" placeholder="Tên món ăn">
+
+			<button  class="btn_search"><i class="fa fa-search" aria-hidden="true"></i></button>
+		</div>
+
+		</form>
 		</div>
 		<div class="index_sec03_dish">
 			<?php 
