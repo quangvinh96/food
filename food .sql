@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 03, 2018 lúc 06:22 AM
+-- Thời gian đã tạo: Th10 10, 2018 lúc 12:04 PM
 -- Phiên bản máy phục vụ: 10.1.34-MariaDB
 -- Phiên bản PHP: 5.6.37
 
@@ -39,9 +39,14 @@ CREATE TABLE `01_monan` (
 --
 
 INSERT INTO `01_monan` (`01_id_monan`, `01_ten_monan`, `01_hinh`) VALUES
-(1, 'gà xào nấm', ''),
-(2, 'cá hấp bầu', ''),
-(3, 'mực chiên', '');
+(1, 'gà xào nấm', '1.jpg'),
+(2, 'cá hấp bầu ', '2.jpg'),
+(14, 'cá', '1538730231_0258 - yPxGWn2.jpg'),
+(15, 'BBBBBBBBBBBBBBB', '1538962897_0263 - dlZ0MEW.jpg'),
+(16, 'CCCCCCCCCCC', '1538962925_0257 - K8KB9Kj.jpg'),
+(17, 'NNNNNNNNNNNNN', '1538962953_0268 - CLrti1G.jpg'),
+(18, 'RRRRRRRRRRRR', '1538962972_0278 - 0IdVjDC.jpg'),
+(19, 'wer', '1538963017_0258 - yPxGWn2.jpg');
 
 -- --------------------------------------------------------
 
@@ -68,7 +73,8 @@ INSERT INTO `02_nguyenlieutho` (`02_id_nguyenlieu`, `02_ten_nguyenlieu`, `02_id_
 (2, 'nắm', '2', 'dfd', 'dfsd', 'sdfsd', 5),
 (3, 'cá', '1', 'sadas', 'sadasd', 'sadasd', 15),
 (4, 'bầu', '2', 'ssa', 'sadas', 'ádasd', 32),
-(5, 'hành', '2', 'ád', 'sad', 'sss', 1);
+(5, 'hành', '2', 'ád', 'sad', 'sss', 1),
+(6, 'táo', '4', '12', 'xanh', 'fsf', 12);
 
 -- --------------------------------------------------------
 
@@ -109,10 +115,21 @@ CREATE TABLE `04_khoiluong` (
 --
 
 INSERT INTO `04_khoiluong` (`04_id_khoiluong`, `04_id_monan`, `04_id_nguyenlieu`, `04_khoiluong`) VALUES
-(1, 1, 1, 100),
 (2, 1, 2, 150),
 (3, 2, 3, 344),
-(4, 2, 4, 500);
+(4, 2, 4, 500),
+(6, 1, 1, 400),
+(7, 1, 6, 56456546),
+(13, 14, 3, 23),
+(14, 14, 5, 43),
+(15, 14, 6, 65),
+(16, 15, 2, 12),
+(17, 15, 4, 12),
+(18, 16, 2, 45),
+(19, 16, 1, 254),
+(20, 17, 4, 4545),
+(21, 18, 6, 7),
+(22, 19, 4, 45435);
 
 -- --------------------------------------------------------
 
@@ -176,8 +193,13 @@ INSERT INTO `07_giatridinhduong` (`07_id_giatri`, `07_id_nguyenlieu`, `07_id_nho
 (1, 1, 1, NULL),
 (2, 1, 2, NULL),
 (3, 2, NULL, 1),
-(4, 2, NULL, 2),
-(5, 2, 2, NULL);
+(5, 2, 2, NULL),
+(7, 5, 3, NULL),
+(8, 5, 2, NULL),
+(10, 4, NULL, 4),
+(12, 1, NULL, 2),
+(14, 3, NULL, 3),
+(15, 6, 2, NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -233,13 +255,13 @@ ALTER TABLE `07_giatridinhduong`
 -- AUTO_INCREMENT cho bảng `01_monan`
 --
 ALTER TABLE `01_monan`
-  MODIFY `01_id_monan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `01_id_monan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `02_nguyenlieutho`
 --
 ALTER TABLE `02_nguyenlieutho`
-  MODIFY `02_id_nguyenlieu` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `02_id_nguyenlieu` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `03_loai`
@@ -251,7 +273,7 @@ ALTER TABLE `03_loai`
 -- AUTO_INCREMENT cho bảng `04_khoiluong`
 --
 ALTER TABLE `04_khoiluong`
-  MODIFY `04_id_khoiluong` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `04_id_khoiluong` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `05_nhomchat`
@@ -269,7 +291,7 @@ ALTER TABLE `06_vitamin`
 -- AUTO_INCREMENT cho bảng `07_giatridinhduong`
 --
 ALTER TABLE `07_giatridinhduong`
-  MODIFY `07_id_giatri` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `07_id_giatri` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
