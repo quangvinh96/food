@@ -11,12 +11,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="format-detection" content="telephone=no">
 		<title>HEALTHY EATING</title>
+		<link rel="stylesheet" href="<?=$url?>css/table.css">
 		<link rel="stylesheet" href="<?=$url?>css/bootstrap.min.css">
 		<link rel="stylesheet" href="<?=$url?>css/style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="<?=$url?>js/bootstrap.min.js"></script>
+		
+		<!--  -->
 
 		
 		

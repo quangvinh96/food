@@ -39,7 +39,7 @@ $monan = monan_id($id);
 		array_push($tong, $row_NL_MN['04_khoiluong']*$row_NL_MN['02_kcal_1gam']);
 		
 		 ?>
-		 <div><?php echo "+ ".$row_NL_MN['02_ten_nguyenlieu'].": ".$row_NL_MN['04_khoiluong']."g, "."Kcal cung cấp: ".$row_NL_MN['04_khoiluong']*$row_NL_MN['02_kcal_1gam']." kcal." ?></div>
+		 <div><?php echo "+ ".$row_NL_MN['02_ten_nguyenlieu'].": ".$row_NL_MN['04_khoiluong']."g, "."Kcal cung cấp: ".($row_NL_MN['04_khoiluong']*$row_NL_MN['02_kcal_1gam']/100)." kcal." ?></div>
 
 		<?php } ?>
 

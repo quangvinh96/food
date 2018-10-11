@@ -32,7 +32,7 @@ td, th {
 		    <th>Loại</th>
 		    <th>Màu</th>
 		    <th>Vị</th>
-		    <th>Số kcal trên 1 gam nguyên liệu</th>
+		    <th>Số kcal trên 100 gam nguyên liệu</th>
 		    <th>Công dụng</th>
 		    <th>Sửa</th>
 		    <th>Xóa</th>

@@ -26,7 +26,8 @@ td, th {
 		</div>
 		<br>
 		<div class="list_table">
-			<table>
+			<table id="example" >
+			<thead>
 		  <tr>
 		    <th>STT</th>
 		    <th>Hình</th>
@@ -34,6 +35,8 @@ td, th {
 		    <th>Chi tiết</th>
 		    <th>Xóa</th>
 		  </tr>
+		  </thead>
+		  <tbody>
 		  <?php $ds_monan = monan();
 		  		$i=1;
 		  		while ($row_ds_monan = mysql_fetch_array($ds_monan)) {
@@ -48,7 +51,7 @@ td, th {
 		    
 		  </tr>
 		 <?php } ?>
-		 
+		 </tbody>
 		</table>
 		</div>
 	</div>
@@ -62,3 +65,14 @@ $("img").error(function(){
     $(this).attr("src","../imgs/chuaco.png")
 	});
 </script> 
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+
+
+<script >
+	$(document).ready(function() {
+    $('#example').DataTable({
+    	 "pagingType": "full_numbers"
+    });
+} );
+</script>

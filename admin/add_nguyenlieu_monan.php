@@ -142,6 +142,8 @@ if(isset($_POST['cn'])){
 		    <th>STT</th>
 		    <th>Tên nguyên liệu</th>
 		    <th>Trọng lượng</th>
+		    <th>Kcal/100g nguyên liệu</th>
+		    <th>Tổng kcal</th>
 		    <th>Xóa</th>
 		  </tr>
 		  <?php $ds_nguyenlieu = nguyenlieu_monan($id);
@@ -153,6 +155,8 @@ if(isset($_POST['cn'])){
 		    <td><?php echo $i++;?></td>
 		    <td><?=$row_ds_nguyenlieu['02_ten_nguyenlieu'] ?></td>
 		    <td><?=$row_ds_nguyenlieu['04_khoiluong'] ?></td>
+		    <td><?=$row_ds_nguyenlieu['02_kcal_1gam'] ?></td>
+		    <td><?=$row_ds_nguyenlieu['02_kcal_1gam']*$row_ds_nguyenlieu['04_khoiluong']/100 ?></td>
 		    <td style="text-align: left;"><a onclick="return confirm('bạn có chắc muốn xóa ?');" href="delete_khoiluong.php?id=<?=$row_ds_nguyenlieu['04_id_khoiluong']?>&id_monan=<?=$id?>">Xóa</a></td>
 		  </tr>
 		 <?php } ?>

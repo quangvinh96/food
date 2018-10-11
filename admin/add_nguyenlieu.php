@@ -50,7 +50,7 @@
 					</select></td>
 				</tr>
 				<tr>
-					<td>Số Kcal trên 1 gam nguyên liệu: &nbsp </td>
+					<td>Số Kcal trên 100 gam nguyên liệu: &nbsp </td>
 					<td><input type="text" onKeyPress="return isNumberKey(event)" name="kcal" required></td>
 				</tr>
 				<tr>

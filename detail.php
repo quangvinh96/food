@@ -23,7 +23,7 @@ $chitiet_monan = monan_id($id);
 						<tr>
 							<th>Nguyên liệu</th>
 							<th>Khối lượng</th>
-							<th>Kcal/1g</th>
+							<th>Kcal/100g</th>
 							<th>Tổng kcal</th>
 						</tr>
 					</thead>
@@ -37,7 +37,7 @@ $chitiet_monan = monan_id($id);
 							<td><?=$row_NL_MN['02_ten_nguyenlieu']?></td>
 							<td><?=$row_NL_MN['04_khoiluong']?></td>
 							<td><?=$row_NL_MN['02_kcal_1gam']?></td>
-							<td><?=$row_NL_MN['04_khoiluong']*$row_NL_MN['02_kcal_1gam']?></td>
+							<td><?=$row_NL_MN['04_khoiluong']*$row_NL_MN['02_kcal_1gam']/100?></td>
 						</tr>
 				<?php } ?>
 					</tbody>
